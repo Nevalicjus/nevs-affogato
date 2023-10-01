@@ -13,7 +13,7 @@ function activate(context) {
       return;
     }
 
-    const javaPath = vscode.workspace.getConfiguration("nev-vs-java-builder").get("javaPath", "/opt/homebrew/opt/openjdk/bin");
+    const javaPath = vscode.workspace.getConfiguration("nevs-affogato").get("javaPath", "/opt/homebrew/opt/openjdk/bin");
     
     const fileName = editor.document.fileName;
     const fileBasenameNoExtension = path.basename(fileName, ".java");
@@ -22,7 +22,7 @@ function activate(context) {
     if (!existingTerminal) {
       // Create a new terminal with the correct working directory
       existingTerminal = vscode.window.createTerminal({
-        name: "Nev Java Build",
+        name: "Affogato Java Build",
         cwd: path.dirname(fileName) // Set the working directory to the directory containing the Java file
       });
     }

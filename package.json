@@ -1,6 +1,6 @@
 {
-    "name": "nev-vs-java-builder",
-    "displayName": "Java Build",
+    "name": "nevs-affogato",
+    "displayName": "Nev's Affogato",
     "version": "0.0.1",
     "engines": {
         "vscode": "^1.0.0"
@@ -10,7 +10,7 @@
     "categories": ["Other"],
     "repository": {
         "type": "git",
-        "url": "https://github.com/Nevalicjus/nev-vs-java-builder.git"
+        "url": "https://github.com/Nevalicjus/nevs-affogato.git"
     },
     "activationEvents": [
         "onContextMenu:java"
@@ -34,7 +34,7 @@
         },
         "configuration": {
             "type": "object",
-            "title": "Nev Java Build",
+            "title": "Nev's Affogato",
             "properties": {
               "javaPath": {
                 "type": "string",
