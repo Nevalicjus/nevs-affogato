@@ -1,0 +1,49 @@
+{
+    "name": "nev-vs-java-builder",
+    "displayName": "Java Build",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.0.0"
+    },
+    "description": "Run a custom build task for Java files",
+    "publisher": "Nevalicjus",
+    "categories": ["Other"],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Nevalicjus/nev-vs-java-builder.git"
+    },
+    "activationEvents": [
+        "onContextMenu:java"
+    ],
+    "main": "./extension.js",
+    "contributes": {
+        "commands": [
+            {
+                "command": "extension.buildJava",
+                "title": "Build Java Project"
+            }
+        ],
+        "menus": {
+            "explorer/context": [
+                {
+                    "when": "resourceLangId == java",
+                    "command": "extension.buildJava",
+                    "group": "8_build"
+                }
+            ]
+        },
+        "configuration": {
+            "type": "object",
+            "title": "Nev Java Build",
+            "properties": {
+              "javaPath": {
+                "type": "string",
+                "default": "/opt/homebrew/opt/openjdk/bin",
+                "description": "Path to the Java folder (ending in \"bin\")"
+              }
+            }
+          }
+    },
+    "keywords": ["java", "build", "task"]
+ }
+ 
