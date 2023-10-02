@@ -1,0 +1,75 @@
+{
+    "name": "nevs-affogato",
+    "displayName": "Nev's Affogato",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.0.0"
+    },
+    "description": "Run a custom build task for Java files",
+    "publisher": "Nevalicjus",
+    "categories": ["Other"],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Nevalicjus/nevs-affogato.git"
+    },
+    "activationEvents": [
+        "onContextMenu:java"
+    ],
+    "main": "./extension.js",
+    "contributes": {
+        "commands": [
+            {
+                "command": "extension.buildJava",
+                "title": "Build Java Project"
+            },
+            {
+                "command": "extension.buildJavaMenu",
+                "title": "Build Java Menu"
+            }
+        ],
+        "menus": {
+            "explorer/context": [
+                {
+                    "when": "resourceLangId == java",
+                    "command": "extension.buildJava",
+                    "group": "8_build"
+                },
+                {
+                    "command": "extension.buildJavaMenu",
+                    "group": "8_build"
+                }
+            ]
+        },
+        "configuration": {
+            "type": "object",
+            "title": "Nev's Affogato",
+            "properties": {
+              "javaPaths": {
+                "type": "array",
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "alias": {
+                            "type": "string",
+                            "description": "Alias of Java"
+                        },
+                        "path": {
+                            "type": "string",
+                            "description": "Path to the Java folder (ending in \"bin\")"
+                        }
+                    }
+                },
+                "default": [
+                    {
+                      "alias": "openjdk@latest",
+                      "path": "/opt/homebrew/opt/openjdk/bin"
+                    }
+                  ],
+                "description": "Mapping of Aliases to Paths to the Java folder (ending in \"bin\")"
+              }
+            }
+          }
+    },
+    "keywords": ["java", "build", "task"]
+ }
+ 

@@ -1,7 +1,7 @@
 {
     "name": "nevs-affogato",
     "displayName": "Nev's Affogato",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "engines": {
         "vscode": "^1.0.0"
     },
