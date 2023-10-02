@@ -7,6 +7,7 @@
     },
     "description": "Run a custom build task for Java files",
     "publisher": "Nevalicjus",
+    "icon": "nevs-affogato.jpg",
     "categories": ["Other"],
     "repository": {
         "type": "git",
